@@ -12,9 +12,17 @@ getIdPw();
 //password 비교부분 추가해야함
 function setIdPw() {
     var pww = prompt('PW 입력','');
+    var src = myImg.getAttribute('src');
     if (pww === localStorage.getItem('password'))
-    alert('정상 로그인!');
-    else alert('비밀번호가 틀립니다.');
+    {
+        alert('정상 로그인!');
+        myImg.setAttribute('src', 'images/github.png');
+    }
+    else 
+    {
+        alert('비밀번호가 틀립니다.')
+        myImg.setAttribute('src', 'images/firefox-icon.png');
+    }
 }
 
 var myButton = document.querySelector('button');
@@ -26,15 +34,6 @@ var id = localStorage.getItem('id');
 var heading = document.querySelector('h1');
 heading.innerHTML = id + 'Homepage';
 var myImg = document.querySelector('img');
-myImg.onclick = function() {
-    var src = myImg.getAttribute('src');
-    if (src === 'images/firefox-icon.png')
-        myImg.setAttribute('src', 'images/github.png');
-    else
-        myImg.setAttribute('src', 'images/firefox-icon.png');
-}
-
-
 
 
 
