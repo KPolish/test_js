@@ -9,13 +9,12 @@
         var a = {'x':10, 'y':20, 'z':30}; //작은 따옴표 없어도 됨
         var c = new Object();
         var d = {};
-        //alert(a.x);
         a.a ='abc';
         delete a.x;
-        //var b = [10, 20, 30];
-        //alert(b[0]);
-
-
+        for (key in a) {
+            document.write(key +' = ' + a[key] + '<br>');
+        }
+        alert(this.a.z);
     </script>
 </body>
 </html>
