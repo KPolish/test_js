@@ -5,12 +5,20 @@
 <body>
   <script>
       //스크립트 입력
-        var a = 'abc';
-        var b = a.toUpperCase();
-        var size = b.length;
-        alert(b + " with size " + size);
+
+        var a = ['a', 'b', 'c', 'd'];
+        var size = a.length;
+        var c = a[1];
+        //a.push('tiger');
+        //a.concat(['x','y','z']);
+        a.unshift('zero');
+        //a.sort();  //정렬
+        a.reverse(); //역정렬
+        alert(a+'\n' + size + '\n' + c);
 
 
-  </script>
+
+
+    </script>
 </body>
 </html>
