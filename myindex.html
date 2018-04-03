@@ -3,31 +3,21 @@
   <meta charset="utf-8"/>
 </head>
 <body>
-    This id a test.
+    This is a test.
   <script>
-      //스크립트 입력
-    let a = 10;  //숫자 데이터
-    a.x = 10;
-    console.log(a.x); //객체가 아닌 데이터에 배열함수 입력시 오류 
-    //let myObj = {a: 10, b: 20, c: 30};  //객체 데이터(중괄호가 있다면 객체)
-    //괄호 안에 괄호가 더 있어도 상관없음.
-    let myObj = {};
-    myObj.a = 3;
-    myObj.b = 20;
-    myObj.c = 30;  //괄호 내의 내용을 다른 줄에 입력해도 됨.
-    //delete myObj.c; //객체 내의 내용 지우기
+    //스크립트 입력
+    //let myFun = s1 => 's1' + '12345';  이런식으로 써도 됨.
+    /*
+    let myFun = function addStr(s1, s2) { //addStr 함수명이 없어도 됨.
+        return s1 + s2;
+    };
+    let myVar = myFun('abc', '123');
+    console.log(myVar);
+    */
+    function Constructor() {}
+    let myFun = Constructor; //= new가 없어 그냥 function으로
+    let myObj = new Constructor(); //= new 로 함수를 객체로
 
-    for (key in myObj) {
-    document.write('key : ' + key + ' => ' + myObj[key] + '<br>');
-    } //객체에 저장된 프로퍼티를 순차적으로 나타내기
-    //  const { PI } = Math;  //객체를 초기화
-    const PI = Math.PI;
-    console.log(PI);
-
-    //console.log(myObj.a);   //
-    console.log(myObj['a']);//문법이 다르더라도 결과는 같게 나옴
-    let date = new Date();
-    document.write(date);
     </script>
 </body>
 </html>
