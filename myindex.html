@@ -6,21 +6,24 @@
     This is a test.
   <script>
     //스크립트 입력
-    //let myFun = s1 => 's1' + '12345';  이런식으로 써도 됨.
-    /*
-    let myFun = function addStr(s1, s2) { //addStr 함수명이 없어도 됨.
-        return s1 + s2;
-    };
-    let myVar = myFun('abc', '123');
-    console.log(myVar);
-    */
-    function Constructor() {} //대문자 Constructor는 지은 이름, const~는 내장된 이름
-    let myFun = Constructor; //= new가 없어 그냥 function으로
-    console.log(myFun.prototype); //(1), myFun의 프로토(원형)은 Constructor
-    console.log(myFun.__proto__);
-    let myObj = new Constructor(); //= new 로 함수를 객체로
-    console.log(myObj.prototype);  //얘는 없는거, 오류
-    console.log(myObj.__proto__); //(1)과 같음
+    function Human() {
+    }
+    Human.prototype.name = '정통';
+    Human.prototype.gender = '남자/여자';
+    function Korean() {
+
+    }
+    Korean.prototype = new Human();
+    Korean.__proto__ = Human.prototype;
+    Korean.prototype.name = '정통2';
+    function Daejeon() {}
+    Daejeon.prototype = new Korean();
+    Daejeon.__proto__ = Korean.prototype;
+    let human = new Human();
+    let Korean = new Korean();
+    console.log(human.name);
+    console.log(korean.name);
+    console.log(deajeon.name);//안됨. 이유가 뭐지
     </script>
 </body>
 </html>
